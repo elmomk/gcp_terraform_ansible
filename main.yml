@@ -1,0 +1,11 @@
+---
+- name: setup server
+  hosts: all
+  become: true
+  tasks:
+    - name: test
+      yum:
+        name:
+          - vim
+          - httpd
+        state: present
