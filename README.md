@@ -1,3 +1,7 @@
+#TODO
+
+Java, nodejs, javascript, en een paar packets
+
 ## pre-requirements
 
 install gcloud, terraform and ansible for your laptop (or you could try to convince me to make a docker image with these tools inside of it)
