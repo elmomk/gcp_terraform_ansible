@@ -2,10 +2,17 @@
 - name: setup server
   hosts: all
   become: true
-  tasks:
-    - name: test
-      yum:
-        name:
-          - vim
-          - httpd
-        state: present
+  roles:
+    - geerlingguy.java
+    - geerlingguy.nginx
+            #- geerlingguy.nginx_backend # frontend has been added as well
+            #- system_server # setup .jar as daemon 
+
+  # tasks:
+  #     - name: Set httpd_can_network_connect flag on and keep it persistent across reboots for proxy
+  #       seboolean:
+  #           name: httpd_can_network_connect
+  #           state: yes
+  #           persistent: yes
+  #     - name: run restore context to reload selinux
+  #       shell: restorecon -Rv /usr/share/nginx
